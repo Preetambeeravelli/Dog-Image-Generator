@@ -26,6 +26,9 @@ struct ContentView: View {
                     .foregroundColor(Color(red: 0.627, green: 0.471, blue: 0.353))
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
+                if dogViewModel.url == nil{
+                    ProgressView()
+                }
             
                 AsyncImage(url: dogViewModel.url) { AsyncImagePhase in
                     AsyncImagePhase.image?.resizable()
